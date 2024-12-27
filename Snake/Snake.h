@@ -13,7 +13,7 @@
 class Snake {
 private:
 
-    Vector2 body[9000]{};
+    Vector2 body[605]{};
     int Size;
     Direction direction;
 

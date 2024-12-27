@@ -11,8 +11,7 @@ int main(){
 
     SetTargetFPS(12);
 
-    while (!WindowShouldClose())
-    {
+    while (!WindowShouldClose()) {
 
         BeginDrawing();
 
@@ -28,14 +27,13 @@ int main(){
             Collision();
         }
         else if (!WIN) {
-            DrawText("GAME OVER", 200, 100, 100, BLACK);
+            DrawText("GAME OVER", 140, 100, 100, BLACK);
+        }
+        else {
+            DrawText(" YOU WON ", 140, 100, 100, BLACK);
         }
 
-        if (WIN) {
-            DrawText("YOU WON", 200, 100, 100, BLACK);
-        }
-
-        ClearBackground(RAYWHITE);
+        ClearBackground({255, 255, 255,255});
 
         EndDrawing();
     }

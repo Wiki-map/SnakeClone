@@ -21,7 +21,22 @@ void Snake::Draw() {
 
     for (int i=0; i < Size; i++) {
 
-        DrawMatrix[int(body[i].x)][int(body[i].y)] = BLACK;
+        if (i < Size / 5) {
+
+            DrawMatrix[int(body[i].x)][int(body[i].y)] = {75,75,75, 255};
+
+        }
+        else if (i < Size / 2) {
+            DrawMatrix[int(body[i].x)][int(body[i].y)] = {50,50,50, 255};
+        }
+
+        else if (i < Size / 2 + Size / 4) {
+            DrawMatrix[int(body[i].x)][int(body[i].y)] = {30,30,30, 255};
+        }
+
+        else {
+            DrawMatrix[int(body[i].x)][int(body[i].y)] = BLACK;
+        }
 
     }
 
@@ -67,7 +82,7 @@ void Snake::Update() {
     for (int i=0; i<Size; i++) {
         for (int j=0; j<Size; j++) {
             if (body[i].x == body[j].x && body[i].y == body[j].y && i != j) {
-                //RESTART = true;
+                RESTART = true;
             }
         }
     }
